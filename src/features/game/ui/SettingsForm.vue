@@ -3,6 +3,8 @@
     class="layout-column gap-4 w-full max-w-80"
     aria-label="Game Settings"
   >
+    <h1>{{ $t('game.settings.title') }}</h1>
+
     <ComparusInput
       :label="$t('game.settings.round_time')"
       v-model="roundTimeMsStr"
