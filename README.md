@@ -7,6 +7,8 @@ Uses standard Vite + Vue3 + TS template.
 ## Was done:
 - styling: `Tailwind`
 - linting: `eslint`
+- validation: `vuelidate`
+- i18n: `vue-i18n`
 - unit-tests: `vitest` + `Testing library`
 - CI/CD: `GitHub Actions`
 - hosting: `Firebase` ( link - https://comparus-game.web.app/ )
