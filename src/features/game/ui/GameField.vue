@@ -99,11 +99,11 @@ const _moveFocusOn = (uuid: string | undefined, delta: number) => {
 };
 
 const handleUpKeyboardPressEvent = (ev: KeyboardEvent) => {
-  _moveFocusOn(_getUuid(ev), -10);
+  _moveFocusOn(_getUuid(ev), -1 * fieldSize.value!);
 };
 
 const handleDowKeyboardPressEvent = (ev: KeyboardEvent) => {
-  _moveFocusOn(_getUuid(ev), 10);
+  _moveFocusOn(_getUuid(ev), fieldSize.value!);
 };
 
 const handleLeftKeyboardPressEvent = (ev: KeyboardEvent) => {
