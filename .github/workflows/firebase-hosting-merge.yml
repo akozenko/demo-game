@@ -8,6 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: false
+          standalone: true
+          dest: ~/setup-pnpm
       - run: pnpm i --frozen-lockfile && pnpm build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
