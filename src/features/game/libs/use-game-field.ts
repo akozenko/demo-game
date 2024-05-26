@@ -9,10 +9,10 @@ import type { FieldCell } from '../types';
 
 export function useGameField() {
   const { fieldSize, roundTimeMs, scoresForWin } = useGameSettings();
-  const field = ref(_generateField(fieldSize.value! * fieldSize.value!));
-  const queue = ref(_generateQueue(field.value));
+  const field = ref<FieldCell[]>([]);
+  const queue = ref<string[]>([]);
   const queueIdx = ref(0);
-  let timerId: number | undefined;
+  let timerId: NodeJS.Timer | number | undefined;
 
   const activeCell = computed(() => {
     if (isEnded.value) {
@@ -42,11 +42,13 @@ export function useGameField() {
   };
 
   const _runRound = () => {
+    if (typeof timerId === 'number') {
+      clearTimeout(timerId);
+    }
     if (isEnded.value) {
       return;
     }
-    clearTimeout(timerId);
-    timerId = window.setTimeout(processAiRound, roundTimeMs.value!);
+    timerId = setTimeout(processAiRound, roundTimeMs.value!);
   };
 
   const _runNextRound = () => {
@@ -73,7 +75,7 @@ export function useGameField() {
   };
 
   const handleIsEndedChangedEvent = (isEnded: boolean) => {
-    if (isEnded) {
+    if (isEnded && typeof timerId === 'number') {
       clearTimeout(timerId);
     }
   };

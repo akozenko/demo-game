@@ -3,7 +3,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     env:
       RUNNER_TOOL_CACHE: /toolcache

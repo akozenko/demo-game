@@ -22,7 +22,8 @@
 
     /* Alias */
     "paths": {
-      "@/*": ["./src/*"],
+      "test/*": ["./test/*"],
+      "assets/*": ["./src/assets/*"],
       "features/*": ["./src/features/*"],
       "shared/*": ["./src/shared/*"],
     },

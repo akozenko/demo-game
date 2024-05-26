@@ -31,6 +31,9 @@ export default [
       'comma-dangle': ['error', {
         'arrays': 'always-multiline',
         'objects': 'always-multiline',
+        'functions': 'always-multiline',
+        'imports': 'always-multiline',
+        'exports': 'always-multiline',
       }],
       quotes: ['error', 'single'],
       semi: ['error', 'always'],

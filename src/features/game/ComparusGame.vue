@@ -7,6 +7,7 @@
     <div
       v-else
       class="layout-column items-center gap-8"
+      aria-label="Game field"
     >
       <GameLegend
         :ai-scores="aiScores"
@@ -21,7 +22,7 @@
     </div>
   </div>
   <ComparusModal v-if="isEnded">
-    <GameEndContent
+    <GameResultsContent
       :is-ai-win="isAiWin"
       :is-user-win="isUserWin"
     />
@@ -38,7 +39,7 @@ import { ref } from 'vue';
 import { ComparusButton } from 'shared/ui/button';
 import { ComparusModal } from 'shared/ui/modal';
 
-import { GameEndContent, GameField, GameLegend, SettingsForm } from './ui';
+import { GameField, GameResultsContent, GameLegend, SettingsForm } from './ui';
 import { useGameField } from './libs';
 
 type Phase = 'input_setting' | 'play_game' ;

@@ -16,12 +16,15 @@
         'border-red-900': error,
       }"
       :type="type"
+      :aria-invalid="Boolean(error)"
+      :aria-errormessage="`${uuid}-error-message`"
 
       @keydown="$emit('keydown', $event)"
       @keyup="$emit('keyup', $event)"
     >
     <span
       v-if="typeof error === 'string'"
+      :id="`${uuid}-error-message`"
       class="text-red-800 typography-caption-regular"
     >{{ error }}</span>
   </div>
@@ -43,7 +46,7 @@ const props = withDefaults(
     label: void 0,
     modelValue: '',
     type: 'text',
-  }
+  },
 );
 
 const emit = defineEmits<{

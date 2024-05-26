@@ -3,7 +3,7 @@ import { plugin as typography } from './tailwind/plugins/typography';
 import { parseFontFamilyTokens, parseFontSizeTokens } from './tailwind/utils';
 
 import {
-  typeStyles as typographyTokens
+  typeStyles as typographyTokens,
 } from './tailwind/design-tokens.json';
 
 /** @type {import('tailwindcss').Config} */

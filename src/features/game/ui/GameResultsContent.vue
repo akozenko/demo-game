@@ -21,8 +21,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import Unlucky from '@/assets/unlucky.png';
-import Success from '@/assets/success.png';
+import Unlucky from 'assets/unlucky.png';
+import Success from 'assets/success.png';
 
 defineProps<{
   isAiWin: boolean;

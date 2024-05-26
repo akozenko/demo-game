@@ -17,6 +17,7 @@
         'bg-green-500': cell.status === 'user_score',
       }"
       :tabindex="1"
+      :aria-label="humanizedLabel(cell.status)"
       @click="handleCellClickEvent"
       @keypress.enter="handleEnterKeyboardPressEvent"
       @keypress.space="handleSpaceKeyboardPressEvent"
@@ -30,7 +31,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import type { FieldCell } from '../types';
+import type { FieldCell, CellStatus } from '../types';
 
 import { useGameSettings } from '../libs';
 
@@ -111,6 +112,15 @@ const handleLeftKeyboardPressEvent = (ev: KeyboardEvent) => {
 
 const handleRightKeyboardPressEvent = (ev: KeyboardEvent) => {
   _moveFocusOn(_getUuid(ev), 1);
+};
+
+const LABELS: Record<NonNullable<CellStatus>, string> = {
+  'active': 'Hit on me',
+  'ai_score': 'Score for AI',
+  'user_score': 'Score for User',
+};
+const humanizedLabel = (status: CellStatus) => {
+  return typeof status === 'string' ? LABELS[status] : '';
 };
 </script>
 <style scoped>

@@ -1,5 +1,8 @@
 <template>
-  <div class="layout-column gap-4 w-full max-w-80">
+  <div
+    class="layout-column gap-4 w-full max-w-80"
+    aria-label="Game Settings"
+  >
     <ComparusInput
       :label="$t('game.settings.round_time')"
       v-model="roundTimeMsStr"

@@ -1,6 +1,9 @@
 <template>
-  <div class="fixed left-0 top-0 right-0 bottom-0 layout-column items-center justify-center">
-    <div class="absolute  left-0 top-0 right-0 bottom-0 bg-slate-600 opacity-55" />
+  <div
+    class="fixed left-0 top-0 right-0 bottom-0 layout-column items-center justify-center"
+    role="dialog"
+  >
+    <div class="absolute left-0 top-0 right-0 bottom-0 bg-slate-600 opacity-55" />
     <div
       class="rounded bg-slate-100 layout-column relative z-10"
       :class="{
@@ -38,6 +41,6 @@ withDefaults(
   }>(),
   {
     size: 'md',
-  }
+  },
 );
 </script>

@@ -21,7 +21,7 @@ withDefaults(
   {
     disabled: false,
     type: 'button',
-  }
+  },
 );
 
 defineEmits<{
