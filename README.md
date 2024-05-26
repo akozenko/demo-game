@@ -1,9 +1,24 @@
-# Vue 3 + TypeScript + Vite
+# Test game
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Uses standard Vite + Vue3 + TS template.
 
-## Recommended Setup
+> __Note:__ I decided do not use any state management system for this project
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+## Was done:
+- styling: `Tailwind`
+- linting: `eslint`
+- unit-tests: `vitest` + `Testing library`
+- CI/CD: `GitHub Actions`
+- hosting: `Firebase` ( link - https://comparus-game.web.app/ )
 
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+
+## Good to have:
+
+- [] I18n. add en local
+- [] code coverage badge
+- [] ci/cd. test, build, hosting should be sequential ( not in parallel )
+- [] linting should be in pre-hook stage
+- [] Modal. Use `Portal`
+- [] Modal. Use `Focus Trap`
+- [] Button. Add `Variant`, `Color` props
+- [] Input. add number input field to prevent type not number chars + auto serialize/deserialize
